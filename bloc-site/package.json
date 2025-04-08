@@ -1,0 +1,21 @@
+{
+  "name": "bloc-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "html2pdf.js": "^0.10.3",
+    "three": "^0.175.0",
+    "turn.js": "^1.0.5"
+  }
+}
