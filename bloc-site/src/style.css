@@ -1,6 +1,92 @@
 /* Navigation Component Styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap");
 
+/***************Base styles *****************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family:
+    "Montserrat",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+}
+/* 3D Model Container */
+.model-container {
+  aspect-ratio: 2.24;
+  width: 100%;
+  background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+.model-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e6e6e6 0%, #f5f5f5 100%);
+}
+.placeholder-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #666;
+  text-align: center;
+}
+/*Green Main Section*/
+.green-section01{
+  background-color: #009d60;
+  display: flex;
+  min-height: 841px;
+  width: 100%;
+  padding: 55px 153px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Hero header */
+.hero-header {
+  display: flex;
+  min-height: 176px;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  justify-content: space-between;
+}
+/* Main title */
+.main-title {
+  font-size: 96px;
+  font-weight: 900;
+}
+/* Subtitle */
+.top-subtitle {
+  font-size: 36px;
+  font-weight: 400;
+}
+/* Content container */
+.top-content-container {
+  margin-top: 57px;
+  width: 1022px;
+  max-width: 100%;
+}
+
+/* Placeholder content */
+.placeholder-content {
+  background-color: rgba(217, 217, 217, 1);
+  display: flex;
+  flex-shrink: 0;
+  height: 498px;
+}
+/**************Nav Bar Styles *****************/
 .nav-container {
   display: flex;
   align-items: center;
@@ -25,28 +111,103 @@
 }
 
 .nav-link {
-  font-family: Montserrat, sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 24px;
   color: #000;
   text-decoration: none;
 }
 .nav-link:hover{
   color:#009d60
 }
+/*******************Feature Showcase Styles*******************/
 
-/* Media Queries */
-@media (max-width: 991px) {
-  .brand-logo {
-    font-size: 96px;
-  }
-
-  .nav-link {
-    font-size: 28px;
-  }
+/******************* Media Queries *****************/
+.feature-showcase {
+  max-width: none;
+  margin:auto;
+  padding:48px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  justify-content: center;
+  align-items: stretch;
 }
 
-@media (max-width: 640px) {
+.feature-block {
+  display: flex;
+  width: 100%;
+  max-width: auto;
+  justify-content: center;
+  padding: 16px 0;
+  flex-direction: row;
+  gap: 48px;
+  align-items: center;
+}
+
+.feature-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 50px;
+  border: 10px solid #62b8d0;
+  background-color: #d9d9d9;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 645px;
+}
+
+.feature-title {
+  font-weight: 900;
+  font-size: 36px;
+  color: #44934d;
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  font-weight: 400;
+  font-size: 24px;
+  color: #000;
+  margin: 0;
+}
+@media (max-width: 670px) {
+  .model-container {
+    max-width: 100%;
+    margin-right: 2px;
+  }
+
+  .placeholder-text {
+    font-size: 18px;
+  }
+
+  .green-section01 {
+    max-width: 100%;
+    padding: 55px 20px;
+  }
+
+  .hero-header {
+    max-width: 100%;
+  }
+
+  .main-title {
+    max-width: 100%;
+    font-size: 40px;
+  }
+
+  .top-subtitle {
+    max-width: 100%;
+    font-size: 24px;
+  }
+
+  .top-content-container {
+    margin-top: 40px;
+  }
+
+  .placeholder-content {
+    max-width: 100%;
+  }
   .navigation-container {
     flex-direction: column;
     align-items: flex-start;
@@ -56,12 +217,16 @@
     font-size: 72px;
   }
 
+  .nav-link {
+    font-size: 28px;
+  }
+
   .nav-links {
     flex-direction: column;
     gap: 20px;
   }
 
   .nav-link {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
