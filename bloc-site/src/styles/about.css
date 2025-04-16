@@ -1,0 +1,78 @@
+/* About Us Page Styles */
+.about-us {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  /*********************About Content Section ********************/
+  .about-header {
+    background-color: #d9d9d9;
+    padding: 191px 0;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-weight: 900;
+    font-size: 96px;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .about-content {
+    padding: 48px;
+  }
+  
+  /* Ideas Section */
+  .ideas-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+  
+  .ideas-text-container {
+    width: 710px;
+  }
+  
+  .ideas-title {
+    font-weight: 900;
+    font-size: 36px;
+    color: #009d60;
+    margin-bottom: 36px;
+    margin-top: 0;
+  }
+  
+  .ideas-description {
+    font-weight: 400;
+    font-size: 24px;
+    color: #000;
+    margin: 0;
+  }
+  
+  .image-placeholder {
+    width: 588px;
+    height: 539px;
+    background-color: #d9d9d9;
+    margin: 0;
+  }
+  
+  /* Commitment Section */
+  .commitment-section {
+    padding: 27px 56px;
+    color: #fff;
+    background-color: #62b8d0;
+  }
+  
+  .commitment-title {
+    font-weight: 900;
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 11px;
+  }
+  
+  .commitment-description {
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0;
+  }
