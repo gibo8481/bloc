@@ -3,131 +3,122 @@
 @import './styles/about.css';
 @import './styles/model.css';
 @import './styles/navbar.css';
-/***************Base styles *****************/
+
+/*************** Base Styles *****************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family:
-    "Montserrat",
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: "Montserrat", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
 }
 
-/* Hero header */
+/*************** Hero Section *****************/
 .hero-header {
   display: flex;
-  min-height: 176px;
+  min-height: 120px;
   flex-direction: column;
   align-items: center;
-  color: rgba(255, 255, 255, 1);
   text-align: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 16px 12px;
 }
-/* Main title */
+
 .main-title {
-  font-size: 96px;
+  font-size: 48px;
   font-weight: 900;
+  margin: 8px 0;
 }
-/* Subtitle */
+
 .top-subtitle {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 400;
+  margin: 4px 0;
 }
-/* Content container */
+
 .top-content-container {
-  margin-top: 57px;
-  width: 1022px;
-  max-width: 100%;
+  margin: 24px auto 0 auto;
+  width: 100%;
+  max-width: 860px;
+  padding: 0 12px;
 }
 
-/* Placeholder content */
 .placeholder-content {
-  background-color: rgba(217, 217, 217, 1);
-  display: flex;
-  flex-shrink: 0;
-  height: 498px;
+  background-color: #d9d9d9;
+  height: 300px;
+  width: 100%;
 }
 
-/*******************Feature Showcase Styles*******************/
-
+/*************** Feature Showcase *****************/
 .feature-showcase {
-  max-width: none;
-  margin: auto;
-  padding: 48px;
+  padding: 48px 24px;
   display: flex;
   flex-direction: column;
-  background-color: transparent;
-  justify-content: center;
-  align-items: stretch;
+  align-items: center;
+  gap: 48px;
 }
 
 .feature-block {
   display: flex;
-  width: 100%;
-  max-width: auto;
-  justify-content: center;
-  padding: 16px 0;
   flex-direction: row;
-  gap: 48px;
+  gap: 32px;
   align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .feature-image {
-  width: 400px;
+  flex: 1;
+  max-width: 400px;
   height: 400px;
-  border-radius: 50px;
-  border: 10px solid #62b8d0;
-  background-color: #d9d9d9;
+  border-radius: 24px;
+  border: 8px solid #62b8d0;
   overflow: hidden;
+  background-color: #d9d9d9;
 }
+
 .feature-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .feature-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 645px;
+  flex: 1;
+  min-width: 280px;
 }
 
 .feature-title {
+  font-size: 28px;
   font-weight: 900;
-  font-size: 36px;
   color: #44934d;
   margin-bottom: 10px;
 }
 
 .feature-description {
-  font-weight: 400;
-  font-size: 24px;
+  font-size: 18px;
   color: #000;
-  margin: 0;
 }
 
-
-/******************** Materials Showcase Styles ********************/
+/*************** Materials Showcase *****************/
 .materials-showcase {
-  max-width: 1442px;
+  max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  padding: 40px 24px;
 }
 
 .showcase-header {
-  width: 100%;
-  height: 250px;
+  height: 180px;
   background-color: #f47068;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 96px;
+  font-size: 48px;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -136,18 +127,16 @@ body {
 
 .materials-options {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 32px;
-  height: 57px;
-  margin-top: 42px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 .material-button-container {
+  width: 140px;
+  height: 50px;
   position: relative;
-  width: 168px;
-  height: 57px;
 }
 
 .material-button-bg {
@@ -159,12 +148,10 @@ body {
 }
 
 .material-button-text {
-  position: absolute;
   width: 100%;
   height: 100%;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -172,155 +159,76 @@ body {
   cursor: pointer;
   background: transparent;
   border: none;
-  outline: none;
+  position: absolute;
 }
 
 .showcase-examples {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 48px;
-  height: 336px;
-  margin-top: 12px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 32px;
 }
 
 .example-item {
-  width: 336px;
-  height: 336px;
+  width: 240px;
+  height: 240px;
   background-color: #d9d9d9;
 }
 
-/******************* Media Queries *****************/
-@media (max-width: 991px) {
-  .materials-showcase {
-    max-width: 991px;
-  }
-
-  .showcase-header {
-    font-size: 72px;
-  }
-
-  .materials-options {
-    padding: 0 24px;
-  }
-
-  .material-button-container {
-    width: 140px;
-    height: 50px;
-  }
-
-  .material-button-text {
-    font-size: 18px;
-  }
-
-  .showcase-examples {
-    padding: 0 36px;
-  }
-
-  .example-item {
-    width: 280px;
-    height: 280px;
-  }
-}
-
-@media (max-width: 670px) {
-  .model-container {
-    max-width: 100%;
-    margin-right: 2px;
-  }
-
-  .placeholder-text {
-    font-size: 18px;
-  }
-
-  .green-section01 {
-    max-width: 100%;
-    padding: 55px 20px;
-  }
-
-  .hero-header {
-    max-width: 100%;
-  }
-
+/*************** Media Queries *****************/
+@media (min-width: 768px) {
   .main-title {
-    max-width: 100%;
-    font-size: 40px;
+    font-size: 64px;
   }
 
   .top-subtitle {
-    max-width: 100%;
-    font-size: 24px;
-  }
-
-  .top-content-container {
-    margin-top: 40px;
-  }
-
-  .placeholder-content {
-    max-width: 100%;
-  }
-  .navigation-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .brand-logo {
-    font-size: 72px;
-  }
-
-  .nav-link {
     font-size: 28px;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 20px;
+  .showcase-header {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-title {
+    font-size: 80px;
   }
 
-  .nav-link {
-    font-size: 18px;
-  }
-
-  /* Materials Showcase Mobile Styles */
-  .materials-showcase {
-    max-width: 640px;
+  .top-subtitle {
+    font-size: 32px;
   }
 
   .showcase-header {
-    font-size: 48px;
-    height: 200px;
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 36px;
   }
 
-  .materials-options {
-    padding: 0 16px;
-    flex-wrap: wrap;
-    height: auto;
-    gap: 10px;
-    justify-content: center;
+  .top-subtitle {
+    font-size: 20px;
   }
 
-  .material-button-container {
-    width: 120px;
-    height: 45px;
-    margin-bottom: 10px;
-  }
-
-  .material-button-text {
-    font-size: 16px;
-  }
-
-  .showcase-examples {
-    padding: 0 24px;
+  .feature-block {
     flex-direction: column;
-    height: auto;
-    gap: 20px;
     align-items: center;
   }
 
+  .feature-image,
   .example-item {
-    width: 240px;
-    height: 240px;
-    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .showcase-header {
+    font-size: 40px;
+    height: 150px;
   }
 }
