@@ -26,43 +26,40 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding: 32px 16px;
+  padding: 12px 8px; /* was 32px */
+  margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
 .main-title {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 900;
-  margin: 12px 0;
-  padding: 0 16px;
   max-width: 900px;
 }
 
 .top-subtitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  margin: 8px 0;
-  padding: 0 16px;
   max-width: 700px;
 }
 
 .top-content-container {
-  margin: 24px auto 0 auto;
   width: 100%;
   max-width: 860px;
-  padding: 0 16px;
+  padding: 20px 16px;
 }
 
 .placeholder-content {
   background-color: #d9d9d9;
   height: 300px;
   width: 100%;
+  justify-content: center;
 }
 
 /*************** Feature Showcase *****************/
 .feature-showcase {
-  padding: 48px 24px;
+  padding: 24px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,50 +70,107 @@ body {
   display: flex;
   flex-direction: row;
   gap: 32px;
-  align-items: center;
   max-width: 1100px;
   width: 100%;
-  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Image container */
+.feature-image-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  max-width: 360px;
+  min-width: 200px;
 }
 
 .feature-image {
-  flex: 1;
-  max-width: 400px;
-  height: 400px;
-  border-radius: 24px;
-  border: 8px solid #62b8d0;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  border: 6px solid #62b8d0;
   overflow: hidden;
   background-color: #d9d9d9;
+  display: flex; /* ensures child img fills correctly */
 }
 
 .feature-image img {
+  flex: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+
+/* Text */
 .feature-content {
-  flex: 1;
-  min-width: 280px;
+  flex: 2;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .feature-title {
   font-size: 28px;
   font-weight: 900;
   color: #44934d;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .feature-description {
   font-size: 18px;
   color: #000;
+  line-height: 1.6;
+}
+
+/*************** Responsive: Keep two-column layout ***************/
+@media (max-width: 768px) {
+  .feature-block {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .feature-image-column,
+  .feature-content {
+    flex: 1 1 50%;
+  }
+
+  .feature-image {
+    height: 150px;
+  }
+
+  .feature-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .feature-title {
+    font-size: 22px;
+  }
+
+  .feature-description {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .feature-image {
+    height: 150px; /* consistent smaller height */
+  }
+
+  .feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensure it fills without distortion */
+  }
 }
 
 /*************** Materials Showcase *****************/
 .materials-showcase {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 24px 24px;
 }
 
 .showcase-header {
@@ -187,29 +241,29 @@ body {
 /*************** Media Queries *****************/
 @media (min-width: 768px) {
   .main-title {
-    font-size: 56px;
+    font-size: 40px;
   }
 
   .top-subtitle {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .showcase-header {
-    font-size: 56px;
+    font-size: 48px;
   }
 }
 
 @media (min-width: 1024px) {
   .main-title {
-    font-size: 64px;
+    font-size: 44px;
   }
 
   .top-subtitle {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .showcase-header {
-    font-size: 64px;
+    font-size: 56px;
   }
 }
 
@@ -235,7 +289,26 @@ body {
   }
 
   .showcase-header {
-    font-size: 32px;
+    font-size: 28px;
     padding: 24px 12px;
   }
+}
+
+
+/*I frame container*/
+.responsive-video {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.responsive-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
