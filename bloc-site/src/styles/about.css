@@ -20,7 +20,7 @@
 }
 
 .about-content {
-  padding: 48px;
+  padding: 12px;
 }
 
 /* Ideas Section */
@@ -74,5 +74,39 @@
 .commitment-description {
   font-weight: 400;
   font-size: 18px;
+  margin: 0;
+}
+
+/* Team Section */
+.team-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  justify-items: center;
+  align-items: center;
+  margin: 12px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member-image {
+  width: 75%;
+  max-width: 300px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.team-member p:first-of-type {
+  font-weight: 900;
+  font-size: 18px;
+  margin: 8px 0 4px;
+}
+
+.team-member p:last-of-type {
+  font-weight: 400;
+  font-size: 16px;
+  color: #666;
   margin: 0;
 }

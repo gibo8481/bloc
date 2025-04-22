@@ -23,6 +23,13 @@
     text-decoration: none;
 }
 
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
 .footer-logo:hover {
     text-decoration: underline;
 }
@@ -41,7 +48,7 @@
 .social-icon {
     height: 24px;
     width: auto; /* Allow width to adjust proportionally */
-    margin-left: 50px; /* Space between icons */
+    margin: 0 10px;
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
@@ -49,8 +56,4 @@
 .footer-copyright {
     font-size: 12px;
     text-align: right;
-}
-
-.footer-copyright p {
-    margin: 0;
 }
