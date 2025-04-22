@@ -47,8 +47,8 @@
 }
 
 .nav-link:hover {
-  background-color: #f0f0f0;
   color: #009d60;
+  text-decoration: underline;
 }
 
 /* Hamburger */
@@ -111,4 +111,11 @@
   .brand-logo {
     font-size: 32px !important;
   }
+  .nav-link:hover {
+    color: #009d60;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
 }
