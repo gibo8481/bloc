@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/blocnc.com', // replace with your repo name
+  base: '/', // replace with your repo name
 });
