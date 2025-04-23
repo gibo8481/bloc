@@ -7,20 +7,42 @@
 
 /*********************About Content Section ********************/
 .about-header {
-  background-color: #d9d9d9;  
-  padding: 50px 0;
-  text-align: center;
+  background-color: #d9d9d9;
+  position: relative;  
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .about-title {
+  position: absolute;
+  top: 20px;
   font-weight: 900;
-  font-size: 44px;
+  font-size: 48px;
   color: #fff;
   margin: 0;
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 }
 
 .about-content {
-  padding: 12px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 20px;
 }
 
 /* Ideas Section */
@@ -29,10 +51,12 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 48px;
+  gap: 48px;
 }
 
 .ideas-text-container {
-  width: 710px;
+  flex: 1;
+  min-width: 0;
 }
 
 .ideas-title {
@@ -55,6 +79,7 @@
   height: 539px;
   background-color: #d9d9d9;
   margin: 0;
+  flex-shrink: 0;
 }
 
 /* Commitment Section */
