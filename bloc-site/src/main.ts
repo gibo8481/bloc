@@ -8,6 +8,8 @@ import { setupModelPage } from './pages/model.ts';
 loadNavbar();
 loadFooter();
 
+setupModelPage();
+
 if (window.location.pathname.endsWith("model.html")) {
   setupModelPage();
 }
