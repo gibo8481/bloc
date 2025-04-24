@@ -20,11 +20,12 @@ export function setupModelPage() {
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setClearColor(0x000000);
   renderer.setPixelRatio(window.devicePixelRatio);
+  // Enable shadows in the renderer
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x87ceeb); // Light blue color for the sky
+  scene.background = new THREE.Color(0x009d60); 
 
   const camera = new THREE.PerspectiveCamera(
     45,
@@ -38,9 +39,13 @@ export function setupModelPage() {
   controls.target.set(0, 1, 0); // Focus on the center of the model
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
-  controls.minDistance = 1.5;
-  controls.maxDistance = 10;
+  controls.minDistance = 1.5; // Minimum distance from the model
+  controls.maxDistance = 3.5; // Maximum distance from the model
   controls.maxPolarAngle = Math.PI / 2;
+
+  // Disable zoom
+  controls.enableZoom = false;
+
   controls.update();
 
   // Add balanced lighting
@@ -48,7 +53,7 @@ export function setupModelPage() {
   scene.add(ambientLight);
 
   // Add three directional lights from the top
-  const topLight1 = new THREE.DirectionalLight(0xffffff, 0.6); // White light
+  const topLight1 = new THREE.DirectionalLight(0xffffff, 2); // White light
   topLight1.position.set(5, 10, 5); // Top-right
   topLight1.castShadow = true;
   scene.add(topLight1);
@@ -64,33 +69,31 @@ export function setupModelPage() {
   scene.add(topLight3);
 
   // Optional: Add helpers to visualize light positions (for debugging)
-  const lightHelper1 = new THREE.DirectionalLightHelper(topLight1, 1);
-  const lightHelper2 = new THREE.DirectionalLightHelper(topLight2, 1);
-  const lightHelper3 = new THREE.DirectionalLightHelper(topLight3, 1);
+  // const lightHelper1 = new THREE.DirectionalLightHelper(topLight1, 1);
+  // const lightHelper2 = new THREE.DirectionalLightHelper(topLight2, 1);
+  // const lightHelper3 = new THREE.DirectionalLightHelper(topLight3, 1);
   // scene.add(lightHelper1, lightHelper2, lightHelper3); // Remove this line
+
+  let blocModel: THREE.Object3D | null = null; // Declare a variable to store the model
 
   const loader = new GLTFLoader().setPath('./model/');
   loader.load(
-    'bloc file.gltf',
+    'bloc_model.gltf',
     (gltf) => {
       console.log('Model loaded successfully', gltf);
-      const blocModel = gltf.scene;
-      blocModel.scale.set(4, 4, 4); // Double the size of the model
+      blocModel = gltf.scene; // Store the model reference
+      blocModel.scale.set(4, 4, 4); // Scale the model
       scene.add(blocModel);
-    
+
       // Center the camera on the model
       const box = new THREE.Box3().setFromObject(blocModel);
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
-
       controls.target.copy(center); // Focus on the model's center
 
-      // Move the camera closer to the model
-      camera.position.set(center.x, center.y + size.y * 0.8, center.z + size.z * 1.5); // Adjusted closer position
+      // Adjust the camera position
+      camera.position.set(center.x, center.y + size.y * 0.8, center.z + size.z * 1.5);
       controls.update();
-
-      // Disable zooming in OrbitControls
-      controls.enableZoom = false;
     },
     (xhr) => {
       console.log(`Loading model: ${(xhr.loaded / xhr.total) * 100}%`);
@@ -120,8 +123,25 @@ export function setupModelPage() {
     return needResize;
   }
 
+  let isUserInteracting = false; // Flag to track user interaction
+
+  // Listen for user interaction events
+  controls.addEventListener('start', () => {
+    isUserInteracting = true; // Stop rotation when user starts interacting
+  });
+
+  controls.addEventListener('end', () => {
+    isUserInteracting = false; // Resume rotation when user stops interacting
+  });
+
   function animate() {
     requestAnimationFrame(animate);
+
+    // Rotate the model slowly if the user is not interacting
+    if (blocModel && !isUserInteracting) {
+      blocModel.rotation.y += 0.0002; // Adjust the speed by changing the increment value
+    }
+
     controls.update();
     render();
   }
