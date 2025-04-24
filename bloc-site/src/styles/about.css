@@ -50,8 +50,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 48px;
-  gap: 48px;
+  padding: 12px;
+  margin: 0 auto;
+  max-width: 90vw;
+  gap: 12px;
 }
 
 .ideas-text-container {
@@ -63,8 +65,7 @@
   font-weight: 900;
   font-size: 24px;
   color: #009d60;
-  margin-bottom: 36px;
-  margin-top: 0;
+  margin: auto;
 }
 
 .ideas-description {
@@ -134,4 +135,52 @@
   font-size: 16px;
   color: #666;
   margin: 0;
+}
+
+/* Responsive stacking for ideas section */
+@media (max-width: 768px) {
+  .ideas-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Footer image with text */
+.footer-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url('./img/Follow_Along.JPG'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-banner-text {
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.footer-banner-text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 20px);
+  height: calc(100% + 10px);
+  border: 4px solid yellow;
+  border-radius: 12px;
+  z-index: -1;
 }

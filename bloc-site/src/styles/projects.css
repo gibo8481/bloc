@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cover Image Section */
+.cover-image img {
+    width: 100%;
+    height: 50vh; /* Adjust the height to fit partially */
+    display: block;
+    object-fit: cover;
+}
+
+/* Intro Section */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.intro-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.intro-text {
+  max-width: 600px;
+}
+
+.intro-text h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #009d60;
+  margin-bottom: 16px;
+}
+
+.intro-text p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Innovation Guide Section */
+.innovation-guide {
+  text-align: center;
+  padding: 24px;
+}
+
+.guide-link {
+  font-size: 20px;
+  font-weight: 900;
+  color: #009d60;
+  text-decoration: none;
+  border: 2px solid #009d60;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.guide-link:hover {
+  background-color: #009d60;
+  color: #fff;
+}
+
+/* Freestyle and Guided Fabrication Sections */
+.freestyle-fabrication,
+.guided-fabrication {
+  padding: 24px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  margin: 24px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.freestyle-fabrication h2,
+.guided-fabrication h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #009d60;
+  margin-bottom: 24px;
+}
+
+/* Grid Styles for Projects */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.project p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
+  }
+
+  .intro-photo {
+    max-width: 100%;
+  }
+
+  .guide-link {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .freestyle-fabrication,
+  .guided-fabrication {
+    padding: 16px;
+  }
+
+  .project {
+    padding: 12px;
+  }
+}

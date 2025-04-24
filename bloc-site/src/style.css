@@ -4,6 +4,7 @@
 @import './styles/model.css';
 @import './styles/navbar.css';
 @import './styles/footer.css';
+@import './styles/projects.css';
 
 /*************** Base Styles *****************/
 * {
