@@ -33,10 +33,10 @@ export function setupModelPage() {
     0.1,
     100
   );
-  camera.position.set(0, 2, 5); // Adjusted camera position for better view
+  camera.position.set(5, 2, 5); // Adjusted camera position for better view
 
   const controls = new OrbitControls(camera, renderer.domElement);
-  controls.target.set(0, 1, 0); // Focus on the center of the model
+  controls.target.set(0, 0, 0); // Focus on the center of the model
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
   controls.minDistance = 1.5; // Minimum distance from the model
@@ -85,15 +85,24 @@ export function setupModelPage() {
       blocModel.scale.set(4, 4, 4); // Scale the model
       scene.add(blocModel);
 
-      // Center the camera on the model
+      // Center the model's pivot point
       const box = new THREE.Box3().setFromObject(blocModel);
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
-      controls.target.copy(center); // Focus on the model's center
+      blocModel.position.sub(center); // Adjust the model's position to center its pivot point
 
-      // Adjust the camera position
-      camera.position.set(center.x, center.y + size.y * 0.8, center.z + size.z * 1.5);
+      // Set the controls target to the model's center
+      controls.target.copy(center);
       controls.update();
+
+      // Adjust the camera position and FOV to fit the entire model
+      // const maxDim = Math.max(size.x, size.y, size.z);
+      // const cameraDistance = maxDim * 1.5; // Adjust multiplier as needed
+      camera.position.set(center.x, center.y + size.y * 0.5, center.z + size.z * 1.5); // Adjust camera position based on model size
+      camera.lookAt(center); // Look at the center of the model
+      camera.fov = 45; // Adjust the field of view if needed
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
     },
     (xhr) => {
       console.log(`Loading model: ${(xhr.loaded / xhr.total) * 100}%`);
