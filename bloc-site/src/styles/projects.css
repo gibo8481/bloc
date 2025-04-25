@@ -6,6 +6,16 @@ body {
   box-sizing: border-box;
 }
 
+/* Style for links */
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color from the parent element */
+}
+
+a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover for better accessibility */
+}
+
 /* Cover Image Section */
 .cover-image img {
     width: 100%;

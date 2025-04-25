@@ -85,7 +85,12 @@
 
 /* Commitment Section */
 .commitment-section {
-  padding: 48px;
+  justify-content: center;
+  padding: 12px;
+  margin: 12px auto;
+  max-width: 90vw;
+  gap: 12px;
+  align-self: center;
   color: #fff;
   background-color: #62b8d0;
 }
@@ -106,7 +111,7 @@
 /* Team Section */
 .team-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 images in a row */
   gap: 24px;
   justify-items: center;
   align-items: center;
@@ -148,6 +153,13 @@
   .image-placeholder {
     width: 100%;
     height: auto;
+  }
+}
+
+/* Responsive stacking for team section */
+@media (max-width: 768px) {
+  .team-section {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for narrower screens */
   }
 }
 

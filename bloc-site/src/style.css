@@ -5,6 +5,7 @@
 @import './styles/navbar.css';
 @import './styles/footer.css';
 @import './styles/projects.css';
+@import './styles/project-details.css';
 
 /*************** Base Styles *****************/
 * {
@@ -179,7 +180,7 @@ body {
   height: auto;
   background-color: #f47068;
   color: #fff;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -251,7 +252,7 @@ body {
   }
 
   .showcase-header {
-    font-size: 48px;
+    font-size: 32px;
   }
 }
 
@@ -265,7 +266,7 @@ body {
   }
 
   .showcase-header {
-    font-size: 56px;
+    font-size: 32px;
   }
 }
 
