@@ -1,25 +1,59 @@
 <footer class="footer-container">
+    <!-- Background patterns -->
+    <img src="../img/bg1.png" alt="Background 1" class="footer-pattern pattern-1">
+    <img src="../img/bg2.png" alt="Background 2" class="footer-pattern pattern-2">
+    <img src="../img/bg3.png" alt="Background 3" class="footer-pattern pattern-3">
+    <img src="../img/bg4.png" alt="Background 4" class="footer-pattern pattern-4">
+    <img src="../img/bg5.png" alt="Background 5" class="footer-pattern pattern-5">
+    <img src="../img/bg6.png" alt="Background 6" class="footer-pattern pattern-6">
+    <img src="../img/bg7.png" alt="Background 7" class="footer-pattern pattern-7">
+    <img src="../img/bg8.png" alt="Background 8" class="footer-pattern pattern-8">
+    <img src="../img/bg9.png" alt="Background 9" class="footer-pattern pattern-9">
+    <img src="../img/bg10.png" alt="Background 10" class="footer-pattern pattern-10">
+
     <div class="footer-content">
-        <!-- Logo on the left -->
+        <!-- Logo on the far left -->
         <a href="/bloc/index.html" class="footer-logo">bloc</a>
 
-        <!-- Social media icons in the middle -->
-        <div class="footer-social">
-            <p style="text-align: center; width: 100%;">Join our community of makers</p>
-            <a href="https://www.linkedin.com" target="_blank" class="social-link">
-                <img src="./img/L_in.png" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://www.youtube.com" target="_blank" class="social-link">
-                <img src="./img/yt.png" alt="YouTube" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com" target="_blank" class="social-link">
-                <img src="./img/Instagram.png" alt="Instagram" class="social-icon">
-            </a>
-        </div>
+        <!-- Footer columns -->
+        <div class="footer-columns">
+            <!-- Column 1: Socials -->
+            <div class="footer-column">
+                <h4 class="footer-header">Socials</h4>
+                <p><a href="https://www.instagram.com" target="_blank" class="footer-link">Instagram</a></p>
+                <p><a href="https://www.linkedin.com" target="_blank" class="footer-link">LinkedIn</a></p>
+                <p><a href="https://www.youtube.com" target="_blank" class="footer-link">YouTube</a></p>
+            </div>
 
-        <!-- Copyright on the far right -->
-        <div class="footer-copyright">
-            <p>&copy; 2025 bloc. All rights reserved.</p>
+            <!-- Column 2: Pages -->
+            <div class="footer-column">
+                <h4 class="footer-header">Pages</h4>
+                <p><a href="/bloc/about.html" class="footer-link">About</a></p>
+                <p><a href="/bloc/projects.html" class="footer-link">Projects</a></p>
+                <p><a href="/bloc/innovation-guide.html" class="footer-link">Innovation Guide</a></p>
+                <p><a href="/bloc/our-journey.html" class="footer-link">Our Journey</a></p>
+            </div>
+
+            <!-- Column 3: Contact -->
+            <div class="footer-column">
+                <h4 class="footer-header">Contact</h4>
+                <p>Number: (123) 456-7890</p>
+                <p>Email: contact@bloc.com</p>
+                <p>Zipcode: 12345</p>
+            </div>
         </div>
     </div>
 </footer>
+
+<script>
+    // JavaScript to randomize pattern positions
+    document.addEventListener("DOMContentLoaded", () => {
+        const patterns = document.querySelectorAll(".footer-pattern");
+        patterns.forEach(pattern => {
+            const randomTop = Math.random() * 80; // Random top position (0% to 80%)
+            const randomLeft = Math.random() * 80; // Random left position (0% to 80%)
+            pattern.style.top = `${randomTop}%`;
+            pattern.style.left = `${randomLeft}%`;
+        });
+    });
+</script>
