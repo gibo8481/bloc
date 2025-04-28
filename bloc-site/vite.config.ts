@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/', // replace with your repo name
+  base: '/', // using root path for custom domain
 });
