@@ -6,6 +6,7 @@
 @import './styles/footer.css';
 @import './styles/projects.css';
 @import './styles/project-details.css';
+@import './styles/innovation.css';
 
 /*************** Base Styles *****************/
 * {
@@ -23,30 +24,15 @@ body {
 }
 
 /*************** Hero Section *****************/
-.hero-header {
+
+.green-section01 {
+  background-color: white; /* Green background color */
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   justify-content: center;
-  padding: 12px 8px; /* was 32px */
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
+  align-items: center;
+  border-bottom: 2px solid #75d481;
 }
-
-/* .main-title {
-  font-size: 36px;
-  font-weight: 900;
-  max-width: 900px;
-} */
-
-.top-subtitle {
-  font-size: 18px;
-  font-weight: 400;
-  max-width: 700px;
-}
-
 .top-content-container {
   width: 100%;
   max-width: 860px;

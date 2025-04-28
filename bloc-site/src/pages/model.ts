@@ -38,10 +38,21 @@ export function setupModelPage() {
   controls.target.set(0, 0, 0);
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
-  controls.minDistance = 1.5;
-  controls.maxDistance = 3.5;
-  controls.maxPolarAngle = Math.PI / 2;
+
+  // Disable zoom completely
   controls.enableZoom = false;
+
+  // Disable panning
+  controls.enablePan = false;
+
+  // Lock the camera distance by setting minDistance and maxDistance to the same value
+  controls.minDistance = 3.5; // Adjust this value based on your desired camera distance
+  controls.maxDistance = 3.5;
+
+  // Prevent the camera from going below the model
+  controls.maxPolarAngle = Math.PI / 2;
+
+  // Update controls
   controls.update();
 
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
@@ -77,14 +88,20 @@ export function setupModelPage() {
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
       blocModel.position.sub(center);
+
+      // Center the model vertically
       blocModel.position.y += size.y * 0.5;
 
       controls.target.copy(center);
       controls.update();
 
+      // Calculate the distance the camera needs to be to fit the model
       const maxDim = Math.max(size.x, size.y, size.z);
-      const cameraDistance = maxDim * 1.8;
-      camera.position.set(center.x, center.y + size.y * 0.5, center.z + cameraDistance);
+      const fov = camera.fov * (Math.PI / 180); // Convert FOV to radians
+      const cameraDistance = maxDim / (2 * Math.tan(fov / 2)); // Distance based on FOV and model size
+
+      // Adjust the camera position to center on the model
+      camera.position.set(center.x, center.y, center.z + cameraDistance * 1.2); // Center the camera vertically
       camera.lookAt(center);
       camera.updateProjectionMatrix();
     },
@@ -110,8 +127,8 @@ export function setupModelPage() {
 
     if (needResize) {
       renderer.setSize(width, height, false);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
+      camera.aspect = width / height; // Update the camera's aspect ratio
+      camera.updateProjectionMatrix(); // Apply the updated aspect ratio
     }
 
     return needResize;

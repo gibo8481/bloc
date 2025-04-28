@@ -1,0 +1,50 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovation Guide | bloc</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Shared nav bar will load here -->
+    <header id="navbar"></header>
+
+    <article class="innovation-header">
+      <div class="about-header" style="background-image: url('./img/innovation-guide-doc.jpg'); 
+      background-size: cover; 
+      background-position: center;
+      width: 100%; 
+      height: 350px; 
+      text-align: center; ">
+        <div class="overlay"></div>
+        <h1 class="about-title">Innovation Guide</h1>
+      </div>
+        <main class="interactive-guide">
+          <section class="guide-text">
+            <p>All <span class="bloc-text">bloc</span> products come with our easy-to-use Innovation Guide, 
+                designed to walk makers through setup, machine basics, and the 
+                engineering design process. Each section is clearly labeled and 
+                packed with the info you need to start creating. Below is the same guide 
+                included in every <span class="bloc-text">bloc</span> kit—now with embedded videos to make learning even easier.</p>
+          </section>
+          <section class="pages">
+            <div id="blue-container">
+              <div id="flipbook">
+                <!-- Pages will be dynamically added by JavaScript -->
+              </div>
+            </div>
+          </section>
+        </main>
+      </article>
+
+      <footer id="navbar"></footer>
+
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
