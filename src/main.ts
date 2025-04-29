@@ -1,10 +1,10 @@
 import '../src/style.css'
 
-import { loadNavbar } from "./components/navbar.ts";
-import { loadFooter } from "./components/footer.ts";
-import { setupAboutPage } from './pages/about.ts';
-import { setupModelPage } from './pages/model.ts';
-import { setupInnovationPage } from './pages/innovation.ts';
+import { loadNavbar } from "../src/components/navbar.ts";
+import { loadFooter } from "../src/components/footer.ts";
+import { setupAboutPage } from '../src/pages/about.ts';
+import { setupModelPage } from '../src/pages/model.ts';
+import { setupInnovationPage } from '../src/pages/innovation.ts';
 
 
 
