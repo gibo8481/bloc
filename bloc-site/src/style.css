@@ -7,7 +7,7 @@
 @import './styles/projects.css';
 @import './styles/project-details.css';
 @import './styles/innovation.css';
-
+@import './styles/our-journey.css';
 /*************** Base Styles *****************/
 * {
   margin: 0;
