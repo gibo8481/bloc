@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/', // replace with your repo name
+  base: process.env.VITE_BASE_PATH || '/bloc',
 });
