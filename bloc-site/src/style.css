@@ -1,12 +1,12 @@
 /* Navigation Component Styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap");
-@import '/src/styles/about.css';
-@import '/src/styles/model.css';
-@import '/src/styles/navbar.css';
-@import '/src/styles/footer.css';
-@import '/src/styles/projects.css';
-@import '/src/styles/project-details.css';
-@import '/src/styles/innovation.css';
+@import './styles/about.css';
+@import './styles/model.css';
+@import './styles/navbar.css';
+@import './styles/footer.css';
+@import './styles/projects.css';
+@import './styles/project-details.css';
+@import './styles/innovation.css';
 
 /*************** Base Styles *****************/
 * {
