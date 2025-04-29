@@ -1,4 +1,4 @@
-import './style.css'
+import '../src/style.css'
 
 import { loadNavbar } from "./components/navbar.ts";
 import { loadFooter } from "./components/footer.ts";
