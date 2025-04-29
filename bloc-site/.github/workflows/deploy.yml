@@ -5,9 +5,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
   build:
     name: Build
@@ -19,17 +16,12 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
-          node-version: '18'
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
       - name: Build project
         run: npm run build
-
-      - name: Copy CNAME to dist
-        run: cp CNAME dist/ || true
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
@@ -51,8 +43,7 @@ jobs:
           path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          cname: blocnc.com
