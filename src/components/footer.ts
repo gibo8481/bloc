@@ -17,7 +17,6 @@ export function renderFooter(): HTMLElement {
     <img src="../img/bg9.png" alt="Background 9" class="footer-pattern pattern-9">
     <img src="../img/bg10.png" alt="Background 10" class="footer-pattern pattern-10">
 
-<<<<<<< HEAD
     <div class="footer-content">
         <!-- Logo on the far left -->
         <a href="/bloc/index.html" class="footer-logo">bloc</a>
@@ -56,55 +55,3 @@ export function renderFooter(): HTMLElement {
 
   return nav;
 }
-=======
-  try {
-    // Fix path handling using the base URL
-    const baseUrl = import.meta.env.BASE_URL || '/';
-    const res = await fetch(baseUrl + "footer.html");
-    
-    if (!res.ok) {
-      console.error(`Failed to fetch footer: ${res.status} ${res.statusText}`);
-      throw new Error("Failed to fetch footer");
-    }
-    
-    let html = await res.text();
-    
-    // Process image paths in the HTML before inserting it
-    // This regex finds img tags and updates their src attributes
-    html = html.replace(
-      /<img\s+src=["']([^"']+)["']/gi,
-      function(match, src) {
-        // Skip external URLs (those that start with http:// or https://)
-        if (src.startsWith('http://') || src.startsWith('https://')) {
-          return match;
-        }
-        
-        // Skip paths that already have the base URL
-        if (src.startsWith(baseUrl)) {
-          return match;
-        }
-        
-        // Remove leading ./ or / from the path
-        const cleanSrc = src.replace(/^\.\/|^\//, '');
-        
-        // Prepend the base URL
-        return `<img src="${baseUrl}${cleanSrc}"`;
-      }
-    );
-    
-    footer.innerHTML = html;
-    console.log("Footer loaded successfully");
-    
-    // Update any other links in the footer
-    const links = footer.querySelectorAll('a');
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href && !href.startsWith('http') && !href.startsWith(baseUrl) && !href.startsWith('/')) {
-        link.setAttribute('href', `${baseUrl}${href}`);
-      }
-    });
-  } catch (err) {
-    console.error("Footer load failed:", err);
-  }
-}
->>>>>>> 4880cabbeace6ac5ef774b4b395b3469475f4b96

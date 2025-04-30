@@ -18,19 +18,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-<<<<<<< HEAD
     "noUncheckedSideEffectImports": true
-=======
-    "noUncheckedSideEffectImports": true,
-
-    "baseUrl": "./",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@footer": ["src/components/footer.ts"],
-      "@header": ["src/components/header.ts"],
-      "@styles/*": ["src/styles/*"]
-    }
->>>>>>> 4880cabbeace6ac5ef774b4b395b3469475f4b96
   },
   "include": ["src"]
 }

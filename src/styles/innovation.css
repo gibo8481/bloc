@@ -1,3 +1,4 @@
+
 #flipbook {
   width: 1056px; /* Total width for two pages side by side */
   height: 816px; /* Height of the flipbook */
@@ -8,6 +9,7 @@
 }
 
 .page {
+  
   width: 528px; /* Width of a single page */
   height: 816px; /* Height of a single page */
   overflow: hidden; /* Prevent content overflow */
@@ -101,4 +103,9 @@
     padding: 0.6rem;
     font-size: 0.9rem;
   }
+}
+div#blue-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }

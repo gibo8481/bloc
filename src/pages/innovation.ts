@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ------------------------------------------------------------------ */
 /*  src/pages/innovation.ts                                           */
 /* ------------------------------------------------------------------ */
@@ -9,10 +8,6 @@ import '../styles/innovation.css';
 
 /* St Page Flip core (JS only, no CSS import here) */
 import { PageFlip } from 'page-flip';
-=======
-import $ from 'jquery';
-import 'turn.js';
->>>>>>> 4880cabbeace6ac5ef774b4b395b3469475f4b96
 
 /**
  * Builds the Innovation Guide flip-book
@@ -50,8 +45,7 @@ export function setupInnovationPage(): void {
     }
     return { width: 528, height: 816 };
   };
-  const { width, height } = baseSize();
-
+  const { width, height } = baseSize(); 
   /* ——— 5. initialise PageFlip ——— */
   const pageFlip = new PageFlip(flipRoot, {
     width,
