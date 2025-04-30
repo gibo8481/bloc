@@ -1,8 +1,3 @@
-// Import global styles
-import '../style.css';
-// Import page-specific styles
-import '../styles/innovation.css';
-
 import $ from 'jquery';
 import 'turn.js';
 
