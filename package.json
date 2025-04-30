@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "homepage": "https://gibo8481.github.io/bloc",
     "preview": "vite preview",
-    "predeploy": "yard build",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
@@ -22,6 +20,6 @@
   "dependencies": {
     "html2pdf.js": "^0.10.3",
     "three": "^0.175.0",
-    "turn.js": "^1.0.2"
+    "turn.js": "^1.0.5"
   }
 }
