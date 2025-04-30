@@ -1,0 +1,1 @@
+import"./style-b-jrMJho.js";function c(){document.querySelectorAll(".team-member").forEach(e=>{e.addEventListener("click",()=>{const t=e.getAttribute("data-name");alert(`You clicked on ${t}'s bio!`)})})}export{c as s};
