@@ -1,5 +1,5 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const a of r.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function t(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(i){if(i.ep)return;i.ep=!0;const r=t(i);fetch(i.href,r)}})();function Rc(){console.log("Rendering navbar...");const s=document.createElement("nav");return s.className="navbar",s.innerHTML=`
-    <nav class="nav-container">
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const a of r.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function t(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(i){if(i.ep)return;i.ep=!0;const r=t(i);fetch(i.href,r)}})();function Rc(){console.log("Rendering navbar...");const s=document.createElement("nav");s.className="navbar",s.innerHTML=`
+    <div class="nav-container">
       <a href="/index.html" class="brand-logo">bloc</a>
 
       <div class="hamburger" id="hamburger">
@@ -13,9 +13,8 @@
         <a href="/projects.html" class="nav-link">PROJECTS</a>
         <a href="/innovation-guide.html" class="nav-link">INNOVATION GUIDE</a>
       </div>
-    </nav>
-
-  `,s}function Cc(){console.log("Rendering navbar...");const s=document.createElement("nav");return s.className="footer",s.innerHTML=`
+    </div>
+  `;const e=s.querySelector("#hamburger"),t=s.querySelector("#navLinks");return e&&t?e.addEventListener("click",()=>{e.classList.toggle("active"),t.classList.toggle("active")}):console.warn("Could not find #hamburger or #navLinks inside navbar"),s}function Cc(){console.log("Rendering navbar...");const s=document.createElement("nav");return s.className="footer",s.innerHTML=`
 <footer class="footer-container">
     <!-- Background patterns -->
     <img src="../img/bg1.png" alt="Background 1" class="footer-pattern pattern-1">
