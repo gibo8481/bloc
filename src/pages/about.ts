@@ -4,13 +4,15 @@ import '../style.css';
 import '../styles/about.css';
 
 // Your page-specific JavaScript/TypeScript code here
-export function setupAboutPage() {
-    const teamMembers = document.querySelectorAll(".team-member");
+
+//Harri this seems to be deprecated :) 
+// export function setupAboutPage() {
+//     const teamMembers = document.querySelectorAll(".team-member");
   
-    teamMembers.forEach(member => {
-      member.addEventListener("click", () => {
-        const name = member.getAttribute("data-name");
-        alert(`You clicked on ${name}'s bio!`);
-      });
-    });
-  }
+//     teamMembers.forEach(member => {
+//       member.addEventListener("click", () => {
+//         const name = member.getAttribute("data-name");
+//         alert(`You clicked on ${name}'s bio!`);
+//       });
+//     });
+//   }

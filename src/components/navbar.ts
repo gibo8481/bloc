@@ -1,32 +1,26 @@
-export async function loadNavbar() {
-  console.log("Trying to load navbar...");
+export function renderNavbar(): HTMLElement {
+  console.log('Rendering navbar...');
+  const nav = document.createElement('nav');
+  nav.className = 'navbar';
 
-  const header = document.getElementById("navbar");
-  if (!header) {
-    console.error("No #navbar element found");
-    return;
-  }
+  nav.innerHTML = `
+    <nav class="nav-container">
+      <a href="/index.html" class="brand-logo">bloc</a>
 
-  try {
-    const res = await fetch("navbar.html");
-    if (!res.ok) throw new Error("Failed to fetch navbar");
-    const html = await res.text();
-    header.innerHTML = html;
-    console.log("Navbar loaded successfully");
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-    // Hook up hamburger toggle AFTER navbar is injected
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
+      <div class="nav-links" id="navLinks">
+        <a href="/about.html" class="nav-link">ABOUT</a>
+        <a href="/projects.html" class="nav-link">PROJECTS</a>
+        <a href="/innovation-guide.html" class="nav-link">INNOVATION GUIDE</a>
+      </div>
+    </nav>
 
-    if (hamburger && navLinks) {
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navLinks.classList.toggle("active");
-      });
-    } else {
-      console.warn("Hamburger or navLinks not found in loaded navbar");
-    }
-  } catch (err) {
-    console.error("Navbar load failed:", err);
-  }
+  `;
+
+  return nav;
 }
