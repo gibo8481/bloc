@@ -35,7 +35,7 @@ export function setupModelPage() {
   camera.position.set(5, 2, 5);
 
   const controls = new OrbitControls(camera, renderer.domElement);
-  controls.target.set(1, 0, 0);
+  controls.target.set(0, 0, 0);
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
 
