@@ -21,11 +21,11 @@
     "noUncheckedSideEffectImports": true,
 
     "baseUrl": "./",
-    "paths":{
+    "paths": {
       "@components/*": ["src/components/*"],
       "@footer": ["src/components/footer.ts"],
       "@header": ["src/components/header.ts"],
-      "@styles/*": ["src/styles/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
   "include": ["src"]
