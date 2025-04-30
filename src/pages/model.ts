@@ -34,8 +34,7 @@ export function setupModelPage() {
   );
   camera.position.set(5, 2, 5);
 
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.target.set(0, 0, 0);
+  const controls = new OrbitControls(camera, renderer.domElement);;
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
 
@@ -75,8 +74,7 @@ export function setupModelPage() {
 
   let blocModel: THREE.Object3D | null = null;
 
-  const baseUrl = import.meta.env.BASE_URL || '/';
-  const loader = new GLTFLoader().setPath(`${baseUrl}model/`);
+  const loader = new GLTFLoader().setPath('./model/');
   loader.load(
     'bloc_model.gltf',
     (gltf) => {
@@ -94,6 +92,7 @@ export function setupModelPage() {
       blocModel.position.y += size.y * 0.5;
 
       controls.target.copy(center);
+      controls.target.z = 0; 
       controls.update();
 
       // Calculate the distance the camera needs to be to fit the model

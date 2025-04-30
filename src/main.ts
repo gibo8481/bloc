@@ -24,6 +24,7 @@ function isCurrentPage(pageName: string): boolean {
          path === `${baseUrl}${pageName}`;
 }
 
+setupModelPage();
 
 // Fix 3: Update page detection logic
 if (isCurrentPage('model.html')) {
