@@ -26,9 +26,6 @@
       "@footer": ["src/components/footer.ts"],
       "@header": ["src/components/header.ts"],
       "@styles/*": ["src/styles/*"],
-      "@about/*": ["src/pages/about.ts"],   
-      "@innovation-guide/*": ["src/pages/innovation-guide.ts"],
-      "@projects/*": ["src/pages/projects.ts"],
     }
   },
   "include": ["src"]
