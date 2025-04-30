@@ -23,6 +23,8 @@
     "baseUrl": "./",
     "paths":{
       "@components/*": ["src/components/*"],
+      "@footer": ["src/components/footer.ts"],
+      "@header": ["src/components/header.ts"]
     }
   },
   "include": ["src"]
