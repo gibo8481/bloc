@@ -75,7 +75,8 @@ export function setupModelPage() {
 
   let blocModel: THREE.Object3D | null = null;
 
-  const loader = new GLTFLoader().setPath('./model/');
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const loader = new GLTFLoader().setPath(`${baseUrl}model/`);
   loader.load(
     'bloc_model.gltf',
     (gltf) => {
